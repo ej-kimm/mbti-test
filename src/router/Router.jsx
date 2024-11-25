@@ -6,18 +6,27 @@ import Signup from '../pages/Signup'
 import Profile from '../pages/Profile'
 import TestPage from '../pages/TestPage'
 import TestResultPage from '../pages/TestResultPage'
+import ProtectedRoute from './ProtectedRoute'
+import NonAuthenticatedRoute from './NonAuthenticatedRoute'
+import Layout from '../components/Layout'
 
 export default function Router() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/test" element={<TestPage />} />
-        <Route path="/results" element={<TestResultPage />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route element={<NonAuthenticatedRoute />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Route>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/test" element={<TestPage />} />
+            <Route path="/results" element={<TestResultPage />} />
+          </Route>
+        </Routes>
+      </Layout>
     </BrowserRouter>
   )
 }
