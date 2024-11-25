@@ -32,12 +32,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.3.12"],\
             ["@types/react-dom", "npm:18.3.1"],\
             ["@vitejs/plugin-react", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:4.3.3"],\
+            ["autoprefixer", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:10.4.20"],\
             ["axios", "npm:1.7.7"],\
             ["eslint", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:9.15.0"],\
             ["eslint-plugin-react", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:7.37.2"],\
             ["eslint-plugin-react-hooks", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:5.0.0"],\
             ["eslint-plugin-react-refresh", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:0.4.14"],\
             ["globals", "npm:15.12.0"],\
+            ["postcss", "npm:8.4.49"],\
             ["react", "npm:18.3.1"],\
             ["react-dom", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:18.3.1"],\
             ["react-router-dom", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:7.0.1"],\
@@ -1350,6 +1352,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["autoprefixer", [\
+        ["npm:10.4.20", {\
+          "packageLocation": "./.yarn/cache/autoprefixer-npm-10.4.20-dd5fd05d27-187cec2ec3.zip/node_modules/autoprefixer/",\
+          "packageDependencies": [\
+            ["autoprefixer", "npm:10.4.20"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:10.4.20", {\
+          "packageLocation": "./.yarn/__virtual__/autoprefixer-virtual-997f442368/0/cache/autoprefixer-npm-10.4.20-dd5fd05d27-187cec2ec3.zip/node_modules/autoprefixer/",\
+          "packageDependencies": [\
+            ["autoprefixer", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:10.4.20"],\
+            ["@types/postcss", null],\
+            ["browserslist", "npm:4.24.2"],\
+            ["caniuse-lite", "npm:1.0.30001684"],\
+            ["fraction.js", "npm:4.3.7"],\
+            ["normalize-range", "npm:0.1.2"],\
+            ["picocolors", "npm:1.1.1"],\
+            ["postcss", "npm:8.4.49"],\
+            ["postcss-value-parser", "npm:4.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/postcss",\
+            "postcss"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["available-typed-arrays", [\
         ["npm:1.0.7", {\
           "packageLocation": "./.yarn/cache/available-typed-arrays-npm-1.0.7-e5e5d79687-1aa3ffbfe6.zip/node_modules/available-typed-arrays/",\
@@ -2401,6 +2431,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["fraction.js", [\
+        ["npm:4.3.7", {\
+          "packageLocation": "./.yarn/cache/fraction.js-npm-4.3.7-c2c7e95a8e-e1553ae3f0.zip/node_modules/fraction.js/",\
+          "packageDependencies": [\
+            ["fraction.js", "npm:4.3.7"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["fs-minipass", [\
         ["npm:2.1.0", {\
           "packageLocation": "./.yarn/cache/fs-minipass-npm-2.1.0-501ef87306-1b8d128dae.zip/node_modules/fs-minipass/",\
@@ -3291,12 +3330,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.3.12"],\
             ["@types/react-dom", "npm:18.3.1"],\
             ["@vitejs/plugin-react", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:4.3.3"],\
+            ["autoprefixer", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:10.4.20"],\
             ["axios", "npm:1.7.7"],\
             ["eslint", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:9.15.0"],\
             ["eslint-plugin-react", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:7.37.2"],\
             ["eslint-plugin-react-hooks", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:5.0.0"],\
             ["eslint-plugin-react-refresh", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:0.4.14"],\
             ["globals", "npm:15.12.0"],\
+            ["postcss", "npm:8.4.49"],\
             ["react", "npm:18.3.1"],\
             ["react-dom", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:18.3.1"],\
             ["react-router-dom", "virtual:317d87869345de785e6004d030bbcbd1a4e7f61e956d8784546a0cbfdb2dcf6b9bc33bdc0e09f3745814bb44578f54ea7d283fa139d6d249ce6139199dea03bf#npm:7.0.1"],\
@@ -3551,6 +3592,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/normalize-path-npm-3.0.0-658ba7d77f-88eeb4da89.zip/node_modules/normalize-path/",\
           "packageDependencies": [\
             ["normalize-path", "npm:3.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["normalize-range", [\
+        ["npm:0.1.2", {\
+          "packageLocation": "./.yarn/cache/normalize-range-npm-0.1.2-bec5e259e2-9b2f14f093.zip/node_modules/normalize-range/",\
+          "packageDependencies": [\
+            ["normalize-range", "npm:0.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
