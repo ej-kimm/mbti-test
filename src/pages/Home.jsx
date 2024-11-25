@@ -4,7 +4,7 @@ import InfoCard from '../components/InfoCard'
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center h-[calc(100vh-4rem)]">
+    <div className="flex flex-col justify-center items-center py-8 lg:py-0">
       <h1 className="text-5xl font-bold text-center text-indigo-600 mb-6">
         Discover Your MBTI Personality
       </h1>
