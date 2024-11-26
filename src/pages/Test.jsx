@@ -3,16 +3,37 @@ import TestForm from '../components/TestForm.jsx'
 import calculateMBTI from './../utils/calculateMBTI'
 import { mbtiDescriptions } from './../utils/mbtiDescriptions'
 import { useNavigate } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid'
+import { createTestResult } from '../api/testResult.js'
+import useUserProfile from '../hooks/useUserProfile.jsx'
 
 export default function Test() {
+  const userProfile = useUserProfile()
   const [result, setResult] = useState(null)
   const navigate = useNavigate()
 
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers)
-    /* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
     setResult(mbtiResult)
+
+    const newData = {
+      id: uuidv4(),
+      nickname: userProfile.nickname,
+      mbti: mbtiResult,
+      description: mbtiDescriptions[mbtiResult],
+      created_at: new Date().toLocaleString(),
+      user_id: userProfile.id,
+      visibility: true,
+    }
+
+    await createTestResult(newData)
   }
+
+  const handleNavigateToResults = () => {
+    navigate('/results')
+  }
+
+  const handleResetTest = () => setResult(null)
 
   return (
     <section className="flex flex-col items-center rounded-lg bg-gradient-to-b from-indigo-100 via-white to-indigo-50 p-8 my-8">
@@ -35,13 +56,13 @@ export default function Test() {
           <div className="flex gap-4 mt-8">
             <button
               className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition duration-300"
-              onClick={() => setResult(null)}
+              onClick={handleResetTest}
             >
               테스트 다시하기
             </button>
             <button
               className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition duration-300"
-              onClick={() => navigate('/results')}
+              onClick={handleNavigateToResults}
             >
               결과 페이지로 이동하기
             </button>
