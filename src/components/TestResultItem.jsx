@@ -1,11 +1,17 @@
 import React from 'react'
 import Button from './ui/Button'
-import useUserProfile from '../hooks/useUserProfile'
+import useTestResult from '../hooks/useTestResult'
 
-export default function TestResultItem({ result }) {
-  const userProfile = useUserProfile()
+export default function TestResultItem({ result, userProfile }) {
+  const { changeItem, deleteItem } = useTestResult()
 
-  if (!userProfile) return <p>사용자 정보를 불러오는 중입니다...</p>
+  const handleVisibility = () => {
+    changeItem.mutate({ id: result.id, visibility: result.visibility })
+  }
+
+  const handleDelete = () => {
+    deleteItem.mutate(result.id)
+  }
 
   return (
     <div className="p-4 border rounded-lg shadow-lg flex flex-col items-center">
@@ -16,14 +22,12 @@ export default function TestResultItem({ result }) {
         </div>
         {result.user_id === userProfile.id && (
           <div className="flex gap-2">
-            <Button
-              type="button"
-              // onClick={() => handleVisibilityChange(result.id, result.visibility)}
-            >
+            <Button type="button" onClick={handleVisibility}>
               {result.visibility ? '비공개로 전환' : '공개로 전환'}
             </Button>
-            {/* <Button type="button" onClick={() => handleDelete(result.id)}> */}
-            <Button type="button">삭제</Button>
+            <Button type="button" onClick={handleDelete}>
+              삭제
+            </Button>
           </div>
         )}
       </div>
