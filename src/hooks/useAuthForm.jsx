@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { register } from '../api/auth'
 import { useAuthContext } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
+import { errorAlert, successAlert } from '../components/ui/Alert'
 
 export default function useAuthForm(mode) {
   const { login } = useAuthContext()
@@ -21,7 +22,7 @@ export default function useAuthForm(mode) {
         await login(user.id, user.password)
       } catch (error) {
         console.error(error)
-        alert('로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.')
+        errorAlert('로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.')
       }
     } else if (mode === 'signup') {
       try {
@@ -30,11 +31,11 @@ export default function useAuthForm(mode) {
           password: user.password,
           nickname: user.nickname,
         })
-        alert('회원가입 성공했습니다! 로그인 해주세요')
+        successAlert('회원가입 성공했습니다! 로그인 해주세요')
         navigate('/login')
       } catch (error) {
         console.error(error)
-        alert('회원가입에 실패했습니다. 다시 시도해주세요.')
+        errorAlert('회원가입에 실패했습니다. 다시 시도해주세요.')
       }
     }
   }

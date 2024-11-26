@@ -3,11 +3,11 @@ import InputField from '../components/InputField'
 import Button from '../components/ui/Button'
 import { updateProfile } from '../api/auth'
 import { useAuthContext } from '../context/AuthContext'
+import { errorAlert, successAlert } from '../components/ui/Alert'
 
 export default function Profile() {
   const { user } = useAuthContext()
   const [nickname, setNickname] = useState()
-  const [alert, setAlert] = useState(false)
 
   const handleNicknameChange = (e) => {
     setNickname(e.target.value)
@@ -18,9 +18,9 @@ export default function Profile() {
 
     try {
       await updateProfile({ nickname }, user)
-      setAlert(true)
+      successAlert('회원 정보가 성공적으로 수정되었습니다!')
     } catch (error) {
-      alert('회원 정보 수정 실패')
+      errorAlert('회원 정보 수정 실패. 다시 시도해주세요.')
     }
   }
 
@@ -31,7 +31,6 @@ export default function Profile() {
         <p className="text-lg text-gray-600">
           Update your personal information.
         </p>
-        {alert && <p>성공 ... 나중에 alert로 바꿔야지</p>}
       </div>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">

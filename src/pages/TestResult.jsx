@@ -23,7 +23,11 @@ export default function TestResult() {
       </h2>
       <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredData.map((result) => (
-          <TestResultItem result={result} userProfile={userProfile} />
+          <TestResultItem
+            key={result.id}
+            result={result}
+            userProfile={userProfile}
+          />
         ))}
       </div>
     </div>
