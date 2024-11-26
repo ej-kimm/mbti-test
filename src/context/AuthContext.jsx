@@ -7,13 +7,9 @@ export function AuthContextProvider({ children }) {
   const [user, setUser] = useState(() => readTokenFromlocalStorage())
 
   const login = async (id, password) => {
-    try {
-      const response = await loginAPI({ id, password })
-      localStorage.setItem('authToken', JSON.stringify(response.accessToken))
-      setUser(response)
-    } catch (error) {
-      throw error
-    }
+    const response = await loginAPI({ id, password })
+    localStorage.setItem('authToken', JSON.stringify(response.accessToken))
+    setUser(response)
   }
 
   const logout = () => {
