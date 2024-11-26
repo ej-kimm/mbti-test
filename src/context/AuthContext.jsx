@@ -9,7 +9,7 @@ export function AuthContextProvider({ children }) {
   const login = async (id, password) => {
     const response = await loginAPI({ id, password })
     localStorage.setItem('authToken', JSON.stringify(response.accessToken))
-    setUser(response)
+    setUser(response.accessToken)
   }
 
   const logout = () => {
