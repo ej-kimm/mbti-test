@@ -10,7 +10,7 @@ export function AuthContextProvider({ children }) {
     try {
       const response = await loginAPI({ id, password })
       localStorage.setItem('authToken', JSON.stringify(response.accessToken))
-      setUser(response.accessToken)
+      setUser(response)
     } catch (error) {
       throw error
     }
