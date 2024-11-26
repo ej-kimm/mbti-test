@@ -1,8 +1,13 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
+import { useAuthContext } from '../context/AuthContext'
 
 export default function NonAuthenticatedRoute() {
-  // 인증되지 않은 사용자만
+  const { user } = useAuthContext()
+
+  if (user) {
+    return <Navigate to="/" replace />
+  }
 
   return <Outlet />
 }

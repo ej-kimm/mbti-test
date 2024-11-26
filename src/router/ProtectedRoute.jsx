@@ -1,8 +1,13 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
+import { useAuthContext } from '../context/AuthContext'
 
 export default function ProtectedRoute() {
-  // 인증된 사용자만
+  const { user } = useAuthContext()
+
+  if (!user) {
+    return <Navigate to="/login" replace />
+  }
 
   return <Outlet />
 }

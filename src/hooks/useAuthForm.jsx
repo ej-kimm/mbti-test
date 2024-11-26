@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import { login, register } from '../api/auth'
+import { register } from '../api/auth'
+import { useAuthContext } from '../context/AuthContext'
 
 export default function useAuthForm(mode) {
+  const { login } = useAuthContext()
   const [user, setUser] = useState({ id: '', password: '', nickname: '' })
 
   const handleChange = (e) => {
@@ -13,15 +15,13 @@ export default function useAuthForm(mode) {
     e.preventDefault()
 
     if (mode === 'login') {
-      const response = await login({ id: user.id, password: user.password })
-      console.log(response) // 확인
+      await login(user.id, user.password)
     } else if (mode === 'signup') {
-      const response = await register({
+      await register({
         id: user.id,
         password: user.password,
         nickname: user.nickname,
       })
-      console.log(response) // 확인
     }
   }
 

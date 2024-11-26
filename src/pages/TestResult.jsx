@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default function TestResultPage() {
+export default function TestResult() {
   return <div>TestResultPage</div>
 }

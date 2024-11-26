@@ -13,7 +13,7 @@ export default function Home() {
         understand your personality type and how you interact with the world
         around you
       </p>
-      <Link to="/login">
+      <Link to="/test">
         <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full text-lg">
           Start Your Test Now
         </button>
