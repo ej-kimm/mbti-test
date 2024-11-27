@@ -9,27 +9,24 @@ import TestResult from '../pages/TestResult'
 import ProtectedRoute from './ProtectedRoute'
 import NonAuthenticatedRoute from './NonAuthenticatedRoute'
 import Layout from '../components/Layout'
-import { AuthContextProvider } from '../context/AuthContext'
 
 export default function Router() {
   return (
-    <AuthContextProvider>
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route element={<NonAuthenticatedRoute />}>
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-            </Route>
-            <Route element={<ProtectedRoute />}>
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/test" element={<Test />} />
-              <Route path="/results" element={<TestResult />} />
-            </Route>
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </AuthContextProvider>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route element={<NonAuthenticatedRoute />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Route>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/test" element={<Test />} />
+            <Route path="/results" element={<TestResult />} />
+          </Route>
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   )
 }
