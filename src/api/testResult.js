@@ -1,20 +1,18 @@
-import axios from 'axios'
-
-const API_URL = 'http://localhost:5000/testResults'
+import { testResultPublicInstance } from '../axios/api'
 
 export const getTestResults = async () => {
-  const response = await axios.get(API_URL)
+  const response = await testResultPublicInstance.get('/')
   return response.data
 }
 
 export const createTestResult = async (resultData) => {
-  await axios.post(API_URL, resultData)
+  await testResultPublicInstance.post('/', resultData)
 }
 
 export const deleteTestResult = async (id) => {
-  await axios.delete(`${API_URL}/${id}`)
+  await testResultPublicInstance.delete(`/${id}`)
 }
 
 export const updateTestResultVisibility = async (id, visibility) => {
-  await axios.patch(`${API_URL}/${id}`, { visibility })
+  await testResultPublicInstance.patch(`/${id}`, { visibility })
 }

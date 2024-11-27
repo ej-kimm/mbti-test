@@ -8,13 +8,13 @@ export default function useUserProfile() {
 
   const userProfileQuery = useQuery({
     queryKey: ['userProfile', token],
-    queryFn: () => getUserProfile(token),
+    queryFn: getUserProfile,
     enabled: !!token,
   })
 
   // 프로필 수정
   const updateUser = useMutation({
-    mutationFn: ({ nickname }) => updateProfile({ nickname }, token),
+    mutationFn: ({ nickname }) => updateProfile({ nickname }),
     onSuccess: () => {
       queryClient.invalidateQueries(['userProfile', token])
     },
