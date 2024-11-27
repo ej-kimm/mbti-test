@@ -739,21 +739,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.60.6":
-  version: 5.60.6
-  resolution: "@tanstack/query-core@npm:5.60.6"
-  checksum: 4c165d495bc1d182028d75eeef281866f9466d51316ba137da8b868e843ba47e614065a0b80d7b71636fd356bd87a7f458ebb0e201defb1a1b07bb2215fa7a8b
+"@tanstack/query-core@npm:5.61.5":
+  version: 5.61.5
+  resolution: "@tanstack/query-core@npm:5.61.5"
+  checksum: 112cc6a3e3cde9fc2657d283e8383c64ff7de5780b10c7892c93664ce475bf251bfba79daf2302ce04f2d43b96ced188bd098c220432b21408d7b99cfee58fe0
   languageName: node
   linkType: hard
 
 "@tanstack/react-query@npm:^5.61.3":
-  version: 5.61.3
-  resolution: "@tanstack/react-query@npm:5.61.3"
+  version: 5.61.5
+  resolution: "@tanstack/react-query@npm:5.61.5"
   dependencies:
-    "@tanstack/query-core": 5.60.6
+    "@tanstack/query-core": 5.61.5
   peerDependencies:
     react: ^18 || ^19
-  checksum: cdfcd7efa57b324b7374b575f6f296f9daed2ff8163041d3c53dcb6e7a4910a3082aef257204bb68b2a1a1e202a46217313b8d14468c32a86c0a04514061d8f8
+  checksum: 35f2ed483d03acf77148d338173943bb3b675e38c763f5e763903e48f0ed1d4757d3129e03f4d0231bba808761616f6b3c0a2adcd11d3eebf8ecfb03f7fa7b4b
   languageName: node
   linkType: hard
 
@@ -1852,13 +1852,13 @@ __metadata:
   linkType: hard
 
 "es-to-primitive@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "es-to-primitive@npm:1.2.1"
+  version: 1.3.0
+  resolution: "es-to-primitive@npm:1.3.0"
   dependencies:
-    is-callable: ^1.1.4
-    is-date-object: ^1.0.1
-    is-symbol: ^1.0.2
-  checksum: 4ead6671a2c1402619bdd77f3503991232ca15e17e46222b0a41a5d81aebc8740a77822f5b3c965008e631153e9ef0580540007744521e72de8e33599fca2eed
+    is-callable: ^1.2.7
+    is-date-object: ^1.0.5
+    is-symbol: ^1.0.4
+  checksum: 966965880356486cd4d1fe9a523deda2084c81b3702d951212c098f5f2ee93605d1b7c1840062efb48a07d892641c7ed1bc194db563645c0dd2b919cb6d65b93
   languageName: node
   linkType: hard
 
@@ -2660,7 +2660,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-callable@npm:^1.1.3, is-callable@npm:^1.1.4, is-callable@npm:^1.2.7":
+"is-callable@npm:^1.1.3, is-callable@npm:^1.2.7":
   version: 1.2.7
   resolution: "is-callable@npm:1.2.7"
   checksum: 61fd57d03b0d984e2ed3720fb1c7a897827ea174bd44402878e059542ea8c4aeedee0ea0985998aa5cc2736b2fa6e271c08587addb5b3959ac52cf665173d1ac
@@ -2685,7 +2685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-date-object@npm:^1.0.1, is-date-object@npm:^1.0.5":
+"is-date-object@npm:^1.0.5":
   version: 1.0.5
   resolution: "is-date-object@npm:1.0.5"
   dependencies:
@@ -2807,7 +2807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-symbol@npm:^1.0.2, is-symbol@npm:^1.0.3":
+"is-symbol@npm:^1.0.3, is-symbol@npm:^1.0.4":
   version: 1.0.4
   resolution: "is-symbol@npm:1.0.4"
   dependencies:
@@ -4480,9 +4480,9 @@ __metadata:
   linkType: hard
 
 "type-fest@npm:^4.18.2":
-  version: 4.28.1
-  resolution: "type-fest@npm:4.28.1"
-  checksum: 2fb1e8f906e9d86317b3497c9ebb0cbcd3e48363f2d5ea1f31c624e2e692a0f32acfc15af057cb4fc4555863f4918551f4696628772ab4bb7cb8fd1be0dc33dc
+  version: 4.29.0
+  resolution: "type-fest@npm:4.29.0"
+  checksum: bd9cd0faa476dd0762f7a46d488b37b8a6a6cbb585ef2f163852110883db93b653cf9467d56d05884c7e50cb0c4f07078f7da6b228fa1c207bd5f121cc15d57a
   languageName: node
   linkType: hard
 
