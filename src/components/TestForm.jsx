@@ -8,7 +8,6 @@ export default function TestForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Answers:', answers)
     onSubmit(answers)
   }
 
