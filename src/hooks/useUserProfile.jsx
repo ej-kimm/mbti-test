@@ -1,25 +1,24 @@
-import { useEffect, useState } from 'react'
-import { getUserProfile } from '../api/auth'
+import { getUserProfile, updateProfile } from '../api/auth'
 import { useAuthContext } from '../context/AuthContext'
+import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query'
 
 export default function useUserProfile() {
   const { user: token } = useAuthContext()
-  const [userProfile, setUserProfile] = useState(null)
+  const queryClient = useQueryClient()
 
-  useEffect(() => {
-    const fetchUserInfo = async () => {
-      try {
-        const profile = await getUserProfile(token)
-        setUserProfile(profile)
-      } catch (error) {
-        console.error('Failed to fetch user profile:', error)
-      }
-    }
+  const userProfileQuery = useQuery({
+    queryKey: ['userProfile', token],
+    queryFn: () => getUserProfile(token),
+    enabled: !!token,
+  })
 
-    if (token) {
-      fetchUserInfo()
-    }
-  }, [token])
+  // 프로필 수정
+  const updateUser = useMutation({
+    mutationFn: ({ nickname }) => updateProfile({ nickname }, token),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['userProfile', token])
+    },
+  })
 
-  return userProfile
+  return { userProfileQuery, updateUser }
 }

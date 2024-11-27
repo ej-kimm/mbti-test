@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import InputField from '../components/InputField'
 import Button from '../components/ui/Button'
-import { updateProfile } from '../api/auth'
-import { useAuthContext } from '../context/AuthContext'
+import useUserProfile from '../hooks/useUserProfile'
 import { errorAlert, successAlert } from '../components/ui/Alert'
 
 export default function Profile() {
-  const { user } = useAuthContext()
-  const [nickname, setNickname] = useState()
+  const { updateUser } = useUserProfile()
+  const [nickname, setNickname] = useState('')
 
   const handleNicknameChange = (e) => {
     setNickname(e.target.value)
@@ -16,12 +15,17 @@ export default function Profile() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    try {
-      await updateProfile({ nickname }, user)
-      successAlert('회원 정보가 성공적으로 수정되었습니다!')
-    } catch (error) {
-      errorAlert('회원 정보 수정 실패. 다시 시도해주세요.')
-    }
+    updateUser.mutate(
+      { nickname },
+      {
+        onSuccess: () => {
+          successAlert('회원 정보가 성공적으로 수정되었습니다!')
+        },
+        onError: () => {
+          errorAlert('회원 정보 수정 실패. 다시 시도해주세요.')
+        },
+      }
+    )
   }
 
   return (

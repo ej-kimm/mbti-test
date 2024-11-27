@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import TestResultItem from '../components/TestResultItem'
 import useTestResult from '../hooks/useTestResult'
 import useUserProfile from '../hooks/useUserProfile'
 
 export default function TestResult() {
   const {
-    testResultQuery: { isPending, data },
+    testResultQuery: { data: testResult, isPending: isTestPending },
   } = useTestResult()
-  const userProfile = useUserProfile()
+  const {
+    userProfileQuery: { data: userProfile, isPending: isUserPending },
+  } = useUserProfile()
+  const [filteredData, setFilteredData] = useState([])
 
-  if (!userProfile) return <p>사용자 정보를 불러오는 중입니다...</p>
-  if (isPending) return <p>로딩중입니다...</p>
+  useEffect(() => {
+    if (testResult && userProfile) {
+      const data = testResult.filter(
+        (result) => result.visibility || result.user_id === userProfile.id
+      )
+      setFilteredData(data)
+    }
+  }, [testResult, userProfile])
 
-  const filteredData = data.filter(
-    (result) => result.visibility || result.user_id === userProfile.id
-  )
+  if (isUserPending) return <p>사용자 정보를 불러오는 중입니다...</p>
+  if (isTestPending) return <p>결과를 불러오는 중입니다...</p>
 
   return (
     <div className="p-6" style={{ minHeight: 'calc(100vh - 4rem)' }}>

@@ -1,5 +1,6 @@
 import { useQueryClient, useQuery, useMutation } from '@tanstack/react-query'
 import {
+  createTestResult,
   deleteTestResult,
   getTestResults,
   updateTestResultVisibility,
@@ -14,6 +15,14 @@ export default function useTestResult() {
     queryKey: ['mbti'],
     queryFn: getTestResults,
     enabled: !!token,
+  })
+
+  // 테스트 생성
+  const addItem = useMutation({
+    mutationFn: (resultData) => createTestResult(resultData),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['mbti'])
+    },
   })
 
   // 비공개, 공개 처리
@@ -35,5 +44,5 @@ export default function useTestResult() {
     },
   })
 
-  return { testResultQuery, changeItem, deleteItem }
+  return { testResultQuery, addItem, changeItem, deleteItem }
 }

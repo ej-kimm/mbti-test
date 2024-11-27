@@ -4,13 +4,18 @@ import calculateMBTI from './../utils/calculateMBTI'
 import { mbtiDescriptions } from './../utils/mbtiDescriptions'
 import { useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
-import { createTestResult } from '../api/testResult.js'
 import useUserProfile from '../hooks/useUserProfile.jsx'
+import useTestResult from '../hooks/useTestResult.jsx'
 
 export default function Test() {
-  const userProfile = useUserProfile()
+  const {
+    userProfileQuery: { data: userProfile, isPending },
+  } = useUserProfile()
   const [result, setResult] = useState(null)
+  const { addItem } = useTestResult()
   const navigate = useNavigate()
+
+  if (isPending) return <p>로딩 중입니다..</p>
 
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers)
@@ -25,8 +30,7 @@ export default function Test() {
       user_id: userProfile.id,
       visibility: true,
     }
-
-    await createTestResult(newData)
+    addItem.mutate(newData)
   }
 
   const handleNavigateToResults = () => {
