@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const AUTH_API_URL = 'https://moneyfulpublicpolicy.co.kr'
-const TEST_RESULT_API_URL = 'http://localhost:5000/testResults'
+const TEST_RESULT_API_URL = 'https://open-six-droplet.glitch.me/testResults'
 
 // auth
 export const authPublicInstance = axios.create({
