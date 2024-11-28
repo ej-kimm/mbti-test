@@ -14,12 +14,13 @@ dist-ssr
 .env
 
 # Yarn Zero-Install folders
-.yarn/*
+.yarn/cache
 !.yarn/patches
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
+!.yarn/install-state.gz
 
 # Editor directories and files
 .vscode/*
