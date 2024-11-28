@@ -1704,7 +1704,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["browserslist", "npm:4.24.2"],\
             ["caniuse-lite", "npm:1.0.30001684"],\
-            ["electron-to-chromium", "npm:1.5.65"],\
+            ["electron-to-chromium", "npm:1.5.66"],\
             ["node-releases", "npm:2.0.18"],\
             ["update-browserslist-db", "virtual:0bc5f13e3b070c660ccf3396ff30b6fc44ede2343c6543d593ce4624807ab1bafdbcd764ac20b4d55e6854e63e2568f1c6d09371eb639766b95e2d401b5b05cb#npm:1.1.1"]\
           ],\
@@ -2105,10 +2105,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["electron-to-chromium", [\
-        ["npm:1.5.65", {\
-          "packageLocation": "./.yarn/cache/electron-to-chromium-npm-1.5.65-4c5aeebb06-4a112a0387.zip/node_modules/electron-to-chromium/",\
+        ["npm:1.5.66", {\
+          "packageLocation": "./.yarn/cache/electron-to-chromium-npm-1.5.66-79cae5f089-efa0381d53.zip/node_modules/electron-to-chromium/",\
           "packageDependencies": [\
-            ["electron-to-chromium", "npm:1.5.65"]\
+            ["electron-to-chromium", "npm:1.5.66"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2207,7 +2207,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typed-array-byte-offset", "npm:1.0.3"],\
             ["typed-array-length", "npm:1.0.7"],\
             ["unbox-primitive", "npm:1.0.2"],\
-            ["which-typed-array", "npm:1.1.15"]\
+            ["which-typed-array", "npm:1.1.16"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3383,7 +3383,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/is-typed-array-npm-1.1.13-0dce6ee7c2-150f9ada18.zip/node_modules/is-typed-array/",\
           "packageDependencies": [\
             ["is-typed-array", "npm:1.1.13"],\
-            ["which-typed-array", "npm:1.1.15"]\
+            ["which-typed-array", "npm:1.1.16"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5491,7 +5491,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["isarray", "npm:2.0.5"],\
             ["which-boxed-primitive", "npm:1.0.2"],\
             ["which-collection", "npm:1.0.2"],\
-            ["which-typed-array", "npm:1.1.15"]\
+            ["which-typed-array", "npm:1.1.16"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5510,10 +5510,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["which-typed-array", [\
-        ["npm:1.1.15", {\
-          "packageLocation": "./.yarn/cache/which-typed-array-npm-1.1.15-91410874a2-65227dcbfa.zip/node_modules/which-typed-array/",\
+        ["npm:1.1.16", {\
+          "packageLocation": "./.yarn/cache/which-typed-array-npm-1.1.16-88e900c4ff-903d398ec2.zip/node_modules/which-typed-array/",\
           "packageDependencies": [\
-            ["which-typed-array", "npm:1.1.15"],\
+            ["which-typed-array", "npm:1.1.16"],\
             ["available-typed-arrays", "npm:1.0.7"],\
             ["call-bind", "npm:1.0.7"],\
             ["for-each", "npm:0.3.3"],\
