@@ -22,7 +22,13 @@ authPrivateInstance.interceptors.request.use(
     }
     return config
   },
-  (error) => Promise.reject(error)
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      // 인증 에러 처리(로그아웃, 토큰 갱신 등)
+      // 예를들어, setUser(null)을 호출하여 로그아웃 처리
+    }
+    return Promise.reject(error)
+  }
 )
 
 // testResult
